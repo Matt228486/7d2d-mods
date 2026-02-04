@@ -1,0 +1,14 @@
+<configs>
+	<!-- Player-crafted storage containers - set all to 13x11 (143 slots) -->
+	<set xpath="/lootcontainers/lootcontainer[@name='playerWoodWritableStorage']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerIronWritableStorage']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerSteelWritableStorage']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerDrawer']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerSmallSafes']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerGunSafe']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerProduce']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerTrash']/@size">13,11</set>
+	<!-- storageCrate doesn't exist in base game, so we skip it -->
+	<set xpath="/lootcontainers/lootcontainer[@name='playerCooler']/@size">13,11</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='playerFileCabinet']/@size">13,11</set>
+</configs>

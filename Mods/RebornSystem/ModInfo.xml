@@ -1,0 +1,9 @@
+<ModInfo>
+<xml>
+    <Name value="RebornSystem"/>
+    <DisplayName value="Reborn System"/>
+    <Description value="Allows players to reborn at high levels for scaling bonuses."/>
+    <Author value="Harvy"/>
+    <Version value="1.0.0"/>
+    <Website value=""/>
+</xml>

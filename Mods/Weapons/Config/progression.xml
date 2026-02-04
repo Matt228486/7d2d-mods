@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+	<!-- Outpost Magnum 44 - Survivor's Last Stand -->
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']">
+		<display_entry item="TavernMagnum44" unlock_level="90,92,94,96,98,100" />
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="90,100" value="1" tags="TavernMagnum44"/>
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHandguns']/effect_group">
+		<passive_effect name="CraftingTier" operation="base_add" level="92,94,96,98,100" value="1,2,3,4,5" tags="TavernMagnum44"/>
+	</append>
+
+	<!-- Outpost Baseball Bat - Seat Basher -->
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']">
+		<display_entry item="TavernBaseballBat" unlock_level="70,71,72,73,74,75" />
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,75" value="1" tags="TavernBaseballBat"/>
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/effect_group">
+		<passive_effect name="CraftingTier" operation="base_add" level="71,72,73,74,75" value="1,2,3,4,5" tags="TavernBaseballBat"/>
+	</append>
+
+	<!-- Outpost Iron Knuckles progression entries removed (duplicate of Outpost Golden Knuckles) -->
+
+	<!-- Outpost Pickaxe - Miner's Mug -->
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']">
+		<display_entry item="TavernPickaxe" unlock_level="90,92,94,96,98,100" />
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="90,100" value="1" tags="TavernPickaxe"/>
+	</append>
+
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingHarvestingTools']/effect_group">
+		<passive_effect name="CraftingTier" operation="base_add" level="92,94,96,98,100" value="1,2,3,4,5" tags="TavernPickaxe"/>
+	</append>
+</configs>
+

@@ -1,0 +1,13 @@
+<append xpath="/quests">
+    <quest id="reborn_quest">
+        <name>Reborn</name>
+        <description>Reborn to level 1 for scaling bonuses!"/>
+        <requirements>
+            <level min="200" max="300" />
+        </requirements>
+        <actions>
+            <action type="reset_level" value="1" />
+            <action type="give_buff" buff_id="reborn_bonus" />
+        </actions>
+    </quest>
+</append>

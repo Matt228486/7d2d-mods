@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- Increase forge input slots from 2 to 3 -->
+	<set xpath="/windows/window[@name='windowForgeInput']/@height">274</set>
+	<set xpath="/windows/window[@name='windowForgeInput']/sprite[@name='backgroundMain']/@height">228</set>
+	<set xpath="/windows/window[@name='windowForgeInput']/rect[@name='content']/@height">228</set>
+	<set xpath="/windows/window[@name='windowForgeInput']/rect[@name='content']/grid[@controller='WorkstationMaterialInputGrid']/@rows">3</set>
+</config>
+

@@ -1,0 +1,32 @@
+<configs>
+	<!-- 
+		Harv's 120 Slot Backpack Mod - Progression Adjustments
+		Scales carry capacity bonuses from perks and books to match the expanded inventory
+		Logic based on reference mod: Pack Mule unlocks all slots at level 5, books provide full capacity
+	-->
+	
+	<!-- 
+		Pack Mule Perk - Carry Capacity Bonus
+		Default values: 3, 6, 10, 14, 18 (per level 1-5)
+		Modified values: 15, 30, 45, 60, 75 (unlocks all 120 slots at level 5)
+		This ensures the perk remains useful with the larger inventory
+	-->
+	<set xpath="/progression/perks/perk[@name='perkPackMule']/effect_group/passive_effect[@name='CarryCapacity']/@value">15,30,45,60,75</set>
+	
+	<!-- 
+		Fireman's Almanac Complete Book - Carry Capacity Bonus
+		Default: 45 (in specific biomes: Burnt Forest and Wasteland)
+		Modified: 120 (provides full backpack capacity)
+		Note: This book has multiple effect_groups for different biomes, we update all of them
+	-->
+	<set xpath="/progression/perks/book[@name='perkFiremansAlmanacComplete']/effect_group/passive_effect[@name='CarryCapacity']/@value">120</set>
+	
+	<!-- 
+		Night Stalker Thief Adrenaline Book - Carry Capacity Bonus
+		Default: 27 (only active at night)
+		Modified: 120 (provides full backpack capacity)
+		Note: This bonus only applies at night when not encumbered
+	-->
+	<set xpath="/progression/perks/book[@name='perkNightStalkerThiefAdrenaline']/effect_group/passive_effect[@name='CarryCapacity']/@value">120</set>
+</configs>
+

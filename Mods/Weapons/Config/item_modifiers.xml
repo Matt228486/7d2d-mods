@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+	<!-- Melee Mods -->
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubBurningShaft']">
+		<item_property_overrides name="TavernBaseballBat">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="TavernPickaxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubBarbedWire']">
+		<item_property_overrides name="TavernBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batBarbed_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubMetalSpikes']">
+		<item_property_overrides name="TavernBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batSpikes_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubMetalChain']">
+		<item_property_overrides name="TavernBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batChained_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>
+
+	<!-- Ranged Mods -->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+		<item_property_overrides name="TavernMagnum44">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,.028,.165"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+	</append>
+</configs>
+

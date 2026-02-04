@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<set xpath="//item/property[@name='Stacknumber' and not(@value='1')]/@value">65000</set>
+</configs>
+

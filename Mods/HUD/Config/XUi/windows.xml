@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Remove default bars -->
+	<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar' and @stat_type='Health']"/>
+	<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar' and @stat_type='Stamina']"/>
+	<!-- Food and Water bars don't exist in base game windowToolbelt (they're commented out), so we skip removing them -->
+	<!-- Remove Stealth so Food at 0,0 isn't overlapped -->
+	<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@controller='HUDStatBar' and @stat_type='Stealth']"/>
+
+	<!-- Move the stat-bars container to the bottom center -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud' and @pos='9,156']/@pos">50,45</set>
+
+	<!-- Place status-effect icons above the 4 bars (slightly higher for clearer separation) -->
+	<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@controller='BuffPopoutList']/@pos">85,230</set>
+
+	<!-- Remove vanilla XP bar from toolbelt -->
+	<remove xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@pos='0,8' and @height='10' and @depth='1']"/>
+	<remove xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@pos='0,8' and @height='10' and @depth='9']"/>
+	<remove xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@pos='0,8' and @height='10' and @type='filled' and @fill='{xp}']"/>
+	<!-- Nudge toolbelt (hotbar) down slightly -->
+	<set xpath="/windows/window[@name='windowToolbelt']/@pos">-376,78</set>
+
+	<!-- Show health bars (target bar) always visible -->
+	<set xpath="/windows/window[@name='windowTargetBar']/@visibility">always</set>
+
+	<!-- Remove old custom XP bar from toolbelt (if it exists) -->
+	<!-- CustomXP doesn't exist in base game, so we skip removing it -->
+
+	<!-- Custom Health - Circular -->
+	<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][1]">
+		<rect width="90" height="90" pos="0,0" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
+			<!-- Outer border -->
+			<sprite depth="8" height="88" width="88" name="border" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Background circle -->
+			<sprite depth="9" height="80" width="80" name="background" sprite="ui_game_filled_circle" color="55,55,55" pivot="center" globalopacity="false"/>
+			<!-- Stat fill (radial) -->
+			<sprite depth="10" height="80" width="80" name="BarContent" sprite="ui_game_filled_circle" color="255,60,60,200" pivot="center" globalopacity="false" type="filled" fill="{statfill}" filldirection="radial360"/>
+			<!-- Inner center -->
+			<sprite depth="11" width="66" height="66" name="center" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Icon -->
+			<sprite depth="12" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="24,24" pos="0,-12" pivot="center" foregroundlayer="true"/>
+			<!-- Text -->
+			<label depth="13" name="TextContent" pos="0,12" font_size="18" color="[white]" justify="center" pivot="center" text="{statcurrentwithmax}" width="80" height="20" effect="Outline8" effect_color="0,0,0,220" effect_distance="1,1"/>
+		</rect>
+	</append>
+
+	<!-- Custom Stamina - Circular -->
+	<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][1]">
+		<rect width="90" height="90" pos="85,0" controller="HUDStatBar" stat_type="Stamina" visible="{statvisible}">
+			<!-- Outer border -->
+			<sprite depth="8" height="88" width="88" name="border" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Background circle -->
+			<sprite depth="9" height="80" width="80" name="background" sprite="ui_game_filled_circle" color="55,55,55" pivot="center" globalopacity="false"/>
+			<!-- Stat fill (radial) -->
+			<sprite depth="10" height="80" width="80" name="BarContent" sprite="ui_game_filled_circle" color="0,200,255,210" pivot="center" globalopacity="false" type="filled" fill="{statfill}" filldirection="radial360"/>
+			<!-- Inner center -->
+			<sprite depth="11" width="66" height="66" name="center" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Icon -->
+			<sprite depth="12" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="24,24" pos="0,-12" pivot="center" foregroundlayer="true"/>
+			<!-- Text -->
+			<label depth="13" name="TextContent" pos="0,12" font_size="18" color="[white]" justify="center" pivot="center" text="{statcurrentwithmax}" width="80" height="20" effect="Outline8" effect_color="0,0,0,220" effect_distance="1,1"/>
+		</rect>
+	</append>
+
+	<!-- Custom Food - Circular -->
+	<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][1]">
+		<rect width="90" height="90" pos="170,0" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+			<!-- Outer border -->
+			<sprite depth="8" height="88" width="88" name="border" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Background circle -->
+			<sprite depth="9" height="80" width="80" name="background" sprite="ui_game_filled_circle" color="55,55,55" pivot="center" globalopacity="false"/>
+			<!-- Stat fill (radial) -->
+			<sprite depth="10" height="80" width="80" name="BarContent" sprite="ui_game_filled_circle" color="0,255,160,210" pivot="center" globalopacity="false" type="filled" fill="{statfill}" filldirection="radial360"/>
+			<!-- Inner center -->
+			<sprite depth="11" width="66" height="66" name="center" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Icon -->
+			<sprite depth="12" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="24,24" pos="0,-12" pivot="center" foregroundlayer="true"/>
+			<!-- Text -->
+			<label depth="13" name="TextContent" pos="0,12" font_size="18" color="[white]" justify="center" pivot="center" text="{statcurrentwithmax}" width="80" height="20" effect="Outline8" effect_color="0,0,0,220" effect_distance="1,1"/>
+		</rect>
+	</append>
+
+	<!-- Custom Water - Circular -->
+	<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][1]">
+		<rect width="90" height="90" pos="255,0" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+			<!-- Outer border -->
+			<sprite depth="8" height="88" width="88" name="border" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Background circle -->
+			<sprite depth="9" height="80" width="80" name="background" sprite="ui_game_filled_circle" color="55,55,55" pivot="center" globalopacity="false"/>
+			<!-- Stat fill (radial) -->
+			<sprite depth="10" height="80" width="80" name="BarContent" sprite="ui_game_filled_circle" color="0,160,255,210" pivot="center" globalopacity="false" type="filled" fill="{statfill}" filldirection="radial360"/>
+			<!-- Inner center -->
+			<sprite depth="11" width="66" height="66" name="center" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Icon -->
+			<sprite depth="12" name="Icon" atlas="{staticonatlas|once}" sprite="{staticon|once}" size="24,24" pos="0,-12" pivot="center" foregroundlayer="true"/>
+			<!-- Text -->
+			<label depth="13" name="TextContent" pos="0,12" font_size="18" color="[white]" justify="center" pivot="center" text="{statcurrentwithmax}" width="80" height="20" effect="Outline8" effect_color="0,0,0,220" effect_distance="1,1"/>
+		</rect>
+	</append>
+
+	<!-- Custom XP - Circular (moved next to Water) -->
+	<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud'][1]">
+		<rect width="90" height="90" pos="340,0" visible="true" controller="ToolbeltWindow">
+			<!-- Outer border -->
+			<sprite depth="8" height="88" width="88" name="border" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Background circle -->
+			<sprite depth="9" height="80" width="80" name="background" sprite="ui_game_filled_circle" color="55,55,55" pivot="center" globalopacity="false"/>
+			<!-- XP fill (radial) -->
+			<sprite depth="10" height="80" width="80" name="BarContent" sprite="ui_game_filled_circle" color="170,20,220,210" pivot="center" globalopacity="false" type="filled" fill="{xp}" filldirection="radial360"/>
+			<!-- Inner center -->
+			<sprite depth="11" width="66" height="66" name="center" sprite="ui_game_filled_circle" color="40,40,40" pivot="center" globalopacity="false"/>
+			<!-- Icon -->
+			<sprite depth="12" name="Icon" atlas="ui_game_symbol_atlas" sprite="ui_game_symbol_star" size="24,24" pos="0,-12" pivot="center" foregroundlayer="true" color="255,215,0,255"/>
+			<!-- Text: Level in center -->
+			<label depth="13" name="TextContent" pos="0,0" font_size="20" color="[white]" justify="center" pivot="center" text="{cvar($LastPlayerLevel)}" width="80" height="24" effect="Outline8" effect_color="0,0,0,220" effect_distance="1,1"/>
+		</rect>
+	</append>
+
+</configs>

@@ -1,0 +1,25 @@
+<configs>
+	<!-- 
+		Harv's 120 Slot Backpack Mod
+		Increases player inventory from 45 slots (5x9) to 120 slots (8x15)
+		Increases base carry capacity to accommodate the larger inventory
+		
+		Note: playerFemale extends playerMale, so modifying playerMale affects both genders
+	-->
+	
+	<!-- 
+		BagSize: Number of inventory slots displayed in the UI
+		Default: 45 (5 rows x 9 columns)
+		Modified: 120 (8 rows x 15 columns)
+	-->
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BagSize']/@value">120</set>
+	
+	<!-- 
+		CarryCapacity: Base weight capacity before encumbrance penalties
+		Default: 27
+		Modified: 45 (simplified approach matching reference mod logic)
+		This ensures players can actually carry items in the expanded inventory
+	-->
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity']/@value">45</set>
+</configs>
+

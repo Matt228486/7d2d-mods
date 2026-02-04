@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+  <Name value="Harv_HUD" />
+  <DisplayName value="Harv HUD" />
+  <Description value="Adds Food and Water bars to the HUD, displayed the same way as Health and Stamina" />
+  <Author value="Harvy"/>
+  <Version value="1.0.0" />
+  <Website value="" />
+</xml>

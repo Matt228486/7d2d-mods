@@ -1,0 +1,18 @@
+<configs>
+	<!-- 
+		Harv's 120 Slot Backpack Mod - XUI Scaling Configuration
+		Adjusts UI scale to accommodate the larger backpack window
+		
+		Logic based on reference mod: Slight scale increase helps with wider window display
+		Base game window: 606x349, Modified window: 1010x349 (wider but same height)
+	-->
+	
+	<!-- Overall UI scale multiplier (1.10 = 110% size) -->
+	<!-- Slight scale increase helps ensure the wider window displays properly on various screen sizes -->
+	<set xpath="/xui/ruleset[@name='default']/@scale">1.10</set>
+	
+	<!-- Stack panel scale (0.95 = 95% size) -->
+	<!-- Slightly reduced to help with item stacking display in the wider inventory -->
+	<set xpath="/xui/ruleset[@name='default']/@stackpanel_scale">0.95</set>
+</configs>
+

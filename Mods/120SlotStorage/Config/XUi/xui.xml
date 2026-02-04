@@ -1,0 +1,7 @@
+<configs>
+	<!-- UI scaling for larger storage containers -->
+	<set xpath="/xui/ruleset[@name='default']/@scale">1.05</set>
+	<set xpath="/xui/ruleset[@name='default']/@stackpanel_scale">0.93</set>
+	<!-- Redirect looting window to custom 13x11 window -->
+	<set xpath="/xui/ruleset[@name='default']/window_group[@name='looting']/window[@name='windowLooting']/@name">HarvwindowLooting</set>
+</configs>

@@ -1,0 +1,31 @@
+<configs>
+	<!-- 
+		Harv's 120 Slot Backpack Mod - UI Window Configuration
+		Resizes the backpack inventory window to display 120 slots (8 rows x 15 columns)
+		Wider layout while maintaining base game height for normal appearance
+		
+		Base game: 5 rows x 9 columns = 45 slots (606x349 window, 67x67 cells)
+		Modified: 8 rows x 15 columns = 120 slots (1010x349 window, default 67x67 cells)
+		
+		Logic based on reference mod: Keep window height same as base game, widen it for more columns
+		This prevents stacking issues and maintains a normal appearance
+	-->
+	
+	<!-- Main window dimensions - wider but same height as base game -->
+	<set xpath="/windows/window[@name='windowBackpack']/@width">1010</set>
+	<set xpath="/windows/window[@name='windowBackpack']/@height">349</set>
+	
+	<!-- Content panel height - same as base game -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/@height">303</set>
+	
+	<!-- Background sprite dimensions - adjusted for wider window -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@width">1012</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@height">543</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@pos">-2,2</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@color">[black]</set>
+	
+	<!-- Inventory grid configuration: 8 rows x 15 columns = 120 slots -->
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid[@name='inventory']/@rows">8</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid[@name='inventory']/@cols">15</set>
+</configs>
+

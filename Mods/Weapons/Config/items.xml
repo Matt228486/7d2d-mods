@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+	<!-- Add ClobberKnocker - Custom Baseball Bat -->
+	<append xpath="/items">
+		<item name="meleeWpnClubHarvClobberKnocker">
+			<property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,clubSkill"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="meleeWpnClubT1BaseballBat"/>
+			<property name="CustomIconTint" value="ff2020"/>
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/bat_Prefab.prefab"/>
+			<property name="HoldType" value="65"/>
+			<property name="Material" value="Mwood"/>
+			<property name="TintColor" value="200, 20, 20"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="RepairExpMultiplier" value="6.0"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="club_wood_grab"/>
+			<property name="SoundPlace" value="club_wood_place"/>
+			
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="club_swinglight"/>
+				<property name="Sphere" value=".1"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="180"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="club_swingheavy"/>
+				<property name="Sphere" value=".15"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="meleeWpnClubHarvClobberKnocker">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="60" tags="perkPummelPete,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="18" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6" tags="perkPummelPete"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.5" tags="perkPummelPete"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
+				<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="28" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="24" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				<passive_effect name="DamageModifier" operation="base_set" value="1" tags="head,perkPummelPete" match_all_tags="true"/>
+				<passive_effect name="DismemberChance" operation="base_set" value=".1" tags="perkPummelPete"/>
+				<!-- Knockback effect - 200% force -->
+				<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="2" force="2400"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost-themed Magnum 44 - Survivor's Last Stand -->
+		<item name="TavernMagnum44">
+			<property name="Extends" value="gunHandgunT2Magnum44"/>
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,revolver,44enforcer,barrelAttachments,sideAttachments,smallTopAttachments,attAgility,perkGunslinger,attachmentsIncluded,canHaveCosmetic,handgunSkill,rangerDamage,enforcerReload,firingMode"/>
+			<property name="CustomIcon" value="gunHandgunT2Magnum44"/>
+			<property name="CustomIconTint" value="#8B4513" />
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernMagnum44Desc"/>
+
+			<effect_group name="TavernMagnum44">
+				<passive_effect name="MaxRange" operation="base_set" value="70" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="27" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="135" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="6" tags="perkGunslinger"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="105" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="-5" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.3" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkGunslinger"/>
+
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkGunslinger"/>
+
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1000" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost-themed Baseball Bat - Seat Basher -->
+		<item name="TavernBaseballBat">
+			<property name="Extends" value="meleeWpnClubT1BaseballBat"/>
+			<property name="CustomIcon" value="meleeWpnClubT1BaseballBat"/>
+			<property name="CustomIconTint" value="#8B4513" />
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernBaseballBatDesc"/>
+
+			<effect_group name="TavernBaseballBat">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="90" tags="perkPummelPete,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12.7" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1100,5000" tier="1,6" tags="perkPummelPete"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkPummelPete"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.2" tags="perkPummelPete"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="108" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.6" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="56" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost-themed Iron Knuckles - Bar Fight Special removed (duplicate of Outpost Golden Knuckles) -->
+
+		<!-- Outpost-themed Pickaxe - Miner's Mug -->
+		<item name="TavernPickaxe">
+			<property name="Extends" value="meleeToolPickT2SteelPickaxe"/>
+			<property name="CustomIcon" value="meleeToolPickT2SteelPickaxe"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="HoldType" value="4"/>
+			<property name="Meshfile" value="@:Other/Items/Tools/pickaxe_steelPrefab.prefab"/>
+			<property name="Weight" value="1"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="Material" value="MmeleeToolAllSteel"/>
+			<property name="UnlockedBy" value="craftingHarvestingTools"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="DescriptionKey" value="TavernPickaxeDesc"/>
+			
+			<property class="Action0">
+				<property name="GrazeStart" value=".5"/>
+				<property name="GrazeEnd" value=".6"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="180"/>
+				<property name="UseGrazingHits" value="true"/>
+			</property>
+			<property class="Action1">
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".4"/>
+				<property name="GrazeEnd" value=".48"/>
+				<property name="SwingDegrees" value="110"/>
+				<property name="SwingAngle" value="90"/>
+			</property>
+			<effect_group name="TavernPickaxe">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkMiner69r"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="26.4" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,2500" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="3" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="4" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="23.2" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="120" tags="perkMiner69r,miningTool"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".8" tags="terrGravel"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="52.7" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Machete - Butcher's Cleaver -->
+		<item name="TavernMachete">
+			<property name="Extends" value="meleeWpnBladeT3Machete"/>
+			<property name="CustomIcon" value="meleeWpnBladeT3Machete"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernMacheteDesc"/>
+
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Piercing"/>
+				<property name="Sphere" value=".15"/>
+				<property name="Sound_start" value="machete_swinglight"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".28"/>
+				<property name="GrazeEnd" value=".4"/>
+				<property name="SwingDegrees" value="80"/>
+				<property name="SwingAngle" value="130"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalslashorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Piercing"/>
+				<property name="Sphere" value=".15"/>
+				<property name="Sound_start" value="machete_swingheavy"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".3"/>
+				<property name="GrazeEnd" value=".4"/>
+				<property name="SwingDegrees" value="-80"/>
+				<property name="SwingAngle" value="-60"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalslashorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="TavernMachete">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="140" tags="perkDeepCuts,perkFlurryOfAgility"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12.2" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="900,1600" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.3" tags="perkDeepCuts"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="80" tags="perkDeepCuts"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="32" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="butcherHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="26.0" tags="secondary"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+				<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+				<display_value name="dEntityDamageSneak" value="4"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Rocket Launcher - Final Stand -->
+		<item name="TavernRocketLauncher">
+			<property name="Extends" value="gunExplosivesT3RocketLauncher"/>
+			<property name="CustomIcon" value="gunExplosivesT3RocketLauncher"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernRocketLauncherDesc"/>
+
+			<property class="Action0">
+				<property name="Class" value="Launcher"/>
+				<property name="Delay" value=".8"/>
+				<property name="Magazine_items" value="ammoRocketHE,ammoRocketFrag"/>
+				<property name="Sound_start" value="m136_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="m136_reload"/>
+				<property name="AutoReload" value="false"/>
+				<property name="Particles_muzzle_fire" value="rocketLauncherFire"/>
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/>
+				<property name="ScopeOffset" value="-.00062,.088,.065"/>
+				<property name="SideOffset" value="0,0,0"/>
+				<property name="BarrelOffset" value="0,0,0"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+				<property name="triggerEffectTriggerShootDualsense" value="PistolShoot"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+				<property name="triggerEffectTriggerPullDualsense" value="PistolZoom"/>
+			</property>
+			<effect_group name="TavernRocketLauncher">
+				<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".25,1.25" tier="2,6" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".25,1.25" tier="2,6" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".15" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="10" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="10" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".4" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="150,330" tier="1,6" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Junk Drone - Outpost Companion -->
+		<item name="TavernJunkDrone">
+			<property name="Extends" value="gunBotT3JunkDrone"/>
+			<property name="CustomIcon" value="gunBotT3JunkDrone"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernJunkDroneDesc"/>
+
+			<property class="Action1">
+				<property name="Class" value="SpawnTurret"/>
+				<property name="Turret" value="entityJunkDrone"/>
+				<property name="PreviewSize" value="0.25,0.25,0.25"/>
+			</property>
+			<effect_group name="TavernJunkDrone">
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkTurrets"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".25,1.25" tier="2,6" tags="perkTurrets"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="70"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="100" tags="perkTurrets"/>
+				<passive_effect name="MagazineSize" operation="base_add" value=".1,.5" tier="2,6" tags="perkTurrets"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.13" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.05" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".15" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value=".3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2" tags="perkTurrets"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1200,2400" tier="1,6" tags="perkTurrets"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Junk Sledge - Guard Hammer -->
+		<item name="TavernJunkSledge">
+			<property name="Extends" value="gunBotT1JunkSledge"/>
+			<property name="CustomIcon" value="gunBotT1JunkSledge"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="9000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernJunkSledgeDesc"/>
+
+			<property class="Action0">
+				<property name="Class" value="Ranged"/>
+				<property name="Hitmask_override" value="Melee"/>
+				<property name="UseMeleeCrosshair" value="true"/>
+				<property name="Delay" value=".8"/>
+				<property name="Sound_start" value="junksledge_fire"/>
+				<property name="Sound_loop" value="junksledge_fire"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Single_magazine_usage" value="true"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Particles_muzzle_fire" value="nozzleflash_shotgun"/>
+				<property name="Particles_muzzle_smoke" value="nozzlesmokeuzi"/>
+				<property name="Bullet_material" value="stone"/>
+				<property name="ScopeOffset" value="0,0,0"/>
+				<property name="SideOffset" value="0,0,0"/>
+				<property name="BarrelOffset" value="0,0,0"/>
+				<property name="SupportHarvesting" value="true"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+			</property>
+			<effect_group name="TavernJunkSledge">
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="3" tags="perkMiner69r"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="10" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="4.6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2"/>
+				<display_value name="dBlockRepairAmount" value="2000"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkMiner69r"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="257" tags="perkMiner69r"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="10"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.7" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".7" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.6" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".6" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="75" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="oreWoodHarvest"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="600" tags="perkMiner69r"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.45" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".45" tags="perkMiner69r"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Junk Turret - Outpost Warden -->
+		<item name="TavernJunkTurret">
+			<property name="Extends" value="gunBotT2JunkTurret"/>
+			<property name="CustomIcon" value="gunBotT2JunkTurret"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernJunkTurretDesc"/>
+
+			<property class="Action1">
+				<property name="Class" value="SpawnTurret"/>
+				<property name="Turret" value="entityJunkTurret"/>
+				<property name="PreviewSize" value="0.25,0.25,0.25"/>
+			</property>
+			<effect_group name="TavernJunkTurret">
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkTurrets"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".25,1.25" tier="2,6" tags="perkTurrets"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value="0" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="70"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="100" tags="perkTurrets"/>
+				<passive_effect name="MagazineSize" operation="base_add" value=".1,.5" tier="2,6" tags="perkTurrets"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.13" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.05" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".15" tags="perkTurrets"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value=".3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="3" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2" tags="perkTurrets"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2" tags="perkTurrets"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" tags="perkTurrets"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkTurrets"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1200,2400" tier="1,6" tags="perkTurrets"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
+				<passive_effect name="ModSlots" operation="base_set" value="2,3,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost HandgunT2Magnum44 - Outpost Justice -->
+		<item name="TavernHandgunT2Magnum44">
+			<property name="Extends" value="gunHandgunT2Magnum44"/>
+			<property name="CustomIcon" value="gunHandgunT2Magnum44"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,revolver,barrelAttachments,sideAttachments,smallTopAttachments,attAgility,perkGunslinger,attachmentsIncluded,canHaveCosmetic,handgunSkill,noDrum"/>
+			<property name="DescriptionKey" value="TavernHandgunT2Magnum44Desc"/>
+
+			<effect_group name="TavernHandgunT2Magnum44">
+				<passive_effect name="MaxRange" operation="base_set" value="80" tags="perkGunslinger"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="120" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2.5" tags="perkGunslinger"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="400" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.12" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".35" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="4.5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.3" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkGunslinger"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SMG5 - Rapid Response -->
+		<item name="TavernSMG5">
+			<property name="Extends" value="gunHandgunT3SMG5"/>
+			<property name="CustomIcon" value="gunHandgunT3SMG5"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSMG5Desc"/>
+
+			<effect_group name="TavernSMG5">
+				<passive_effect name="MaxRange" operation="base_set" value="65" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="32" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="480" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="65" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkGunslinger"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="26" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.35" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.35" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".35" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".15" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.15" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkGunslinger"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.2" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".85" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="2600,4200" tier="1,6" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger,9mmGun"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost AK47 - Workhorse -->
+		<item name="TavernAK47">
+			<property name="Extends" value="gunMGT1AK47"/>
+			<property name="CustomIcon" value="gunMGT1AK47"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernAK47Desc"/>
+
+			<effect_group name="TavernAK47">
+				<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="41" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="-3" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="24" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.08" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="300" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkMachineGunner"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="50" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".22" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.25" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".5" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.5" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".5" tags="perkMachineGunner"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.9" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".8" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="600,900" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost TacticalAR - Assault Rifle -->
+		<item name="TavernTacticalAR">
+			<property name="Extends" value="gunMGT2TacticalAR"/>
+			<property name="CustomIcon" value="gunMGT2TacticalAR"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernTacticalARDesc"/>
+
+			<effect_group name="TavernTacticalAR">
+				<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="51" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="24" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.01" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="510" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkMachineGunner"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="4" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="45" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".22" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.1" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkMachineGunner"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.9" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".8" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="500,1400" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost M60 - Heavy Hitter -->
+		<item name="TavernM60">
+			<property name="Extends" value="gunMGT3M60"/>
+			<property name="CustomIcon" value="gunMGT3M60"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="DescriptionKey" value="TavernM60Desc"/>
+
+			<effect_group name="TavernM60">
+				<passive_effect name="MaxRange" operation="base_set" value="95" tags="perkMachineGunner"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="60" tags="perkMachineGunner"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="4" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="28" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".06,.27" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.01" tags="perkMachineGunner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.01" tier="2,6" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="450" tags="perkMachineGunner"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkMachineGunner"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="120" tags="perkMachineGunner"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.25" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".25" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkMachineGunner"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.2" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0.55" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-0.5" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0.5" tags="perkMachineGunner"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkMachineGunner"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".85" tags="perkMachineGunner"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="2000,5000" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Hunting Rifle - Long Shot -->
+		<item name="TavernHuntingRifle">
+			<property name="Extends" value="gunRifleT1HuntingRifle"/>
+			<property name="CustomIcon" value="gunRifleT1HuntingRifle"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernHuntingRifleDesc"/>
+
+			<effect_group name="TavernHuntingRifle">
+				<passive_effect name="MaxRange" operation="base_set" value="160" tags="perkDeadEye"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="75" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="-1" tags="perkDeadEye"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="500" tags="perkDeadEye"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkDeadEye"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2.25" tags="perkDeadEye"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="64" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="5" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".08" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".5" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.35" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".35" tags="perkDeadEye"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="50" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".75" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="320,500" tier="1,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="DamageModifier" operation="base_add" value="50" tags="head"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost LeverActionRifle - Quick Draw -->
+		<item name="TavernLeverActionRifle">
+			<property name="Extends" value="gunRifleT2LeverActionRifle"/>
+			<property name="CustomIcon" value="gunRifleT2LeverActionRifle"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernLeverActionRifleDesc"/>
+
+			<effect_group name="TavernLeverActionRifle">
+				<passive_effect name="MaxRange" operation="base_set" value="160" tags="perkDeadEye"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="65" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="-1" tags="perkDeadEye"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="180" tags="perkDeadEye"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="12" tags="perkDeadEye"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.2"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkDeadEye"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="64" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.3" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="6" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="6" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".066" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0.75" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="1.5" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.1" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1" tags="perkDeadEye"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="11" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".8" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="650,950" tier="1,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="DamageModifier" operation="base_add" value="300" tags="head"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SniperRifle - Precision Shot -->
+		<item name="TavernSniperRifle">
+			<property name="Extends" value="gunRifleT3SniperRifle"/>
+			<property name="CustomIcon" value="gunRifleT3SniperRifle"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="25000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSniperRifleDesc"/>
+
+			<effect_group name="TavernSniperRifle">
+				<passive_effect name="MaxRange" operation="base_set" value="170" tags="perkDeadEye"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="75" tags="perkDeadEye"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="150" tags="perkDeadEye"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkDeadEye"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="15" tags="perkDeadEye"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.2"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="64" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.3" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2" tags="perkDeadEye"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".02" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".2" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.2" tags="perkDeadEye"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.5" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0.2" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0.6" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.025" tags="perkDeadEye"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".025" tags="perkDeadEye"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="11" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".8" tags="perkDeadEye"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1500" tier="1,6" tags="perkDeadEye"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
+				<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost DoubleBarrel - Peacekeeper -->
+		<item name="TavernDoubleBarrel">
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shotgun,shortRange,dBarrel,barrelAttachments,sideAttachments,stock,bottomAttachments,attStrength,perkBoomstick,canHaveCosmetic,attachmentsIncluded,shotgunSkill,noDrum"/>
+			<property name="Extends" value="gunShotgunT1DoubleBarrel"/>
+			<property name="CustomIcon" value="gunShotgunT1DoubleBarrel"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="9000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernDoubleBarrelDesc"/>
+
+			<effect_group name="TavernDoubleBarrel">
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="60" tags="perkBoomstick"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.2,.08" tags="perkBoomstick"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkBoomstick"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="2" tags="perkBoomstick"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.4" tags="perkBoomstick"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="95" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.3" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2.5" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2.5" tags="perkBoomstick"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1.8" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="400,600" tier="1,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
+				<display_value name="dStatStunEffect" value="4"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost PumpShotgun - Super Pump -->
+		<item name="TavernPumpShotgun">
+			<property name="Extends" value="gunShotgunT2PumpShotgun"/>
+			<property name="CustomIcon" value="gunShotgunT2PumpShotgun"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shotgun,shortRange,barrelAttachments,sideAttachments,smallTopAttachments,noScopes,stock,bottomAttachments,attStrength,perkBoomstick,modGunShotgunTubeExtenderMagazine,attachmentsIncluded,canHaveCosmetic,shotgunSkill"/>
+			<property name="DescriptionKey" value="TavernPumpShotgunDesc"/>
+
+			<effect_group name="TavernPumpShotgun">
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="90" tags="perkBoomstick"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.08" tags="perkBoomstick"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkBoomstick"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="8" tags="perkBoomstick"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.3"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5" tags="perkBoomstick"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="18" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.45" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2.5" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2.5" tags="perkBoomstick"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1.8" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="450,700" tier="1,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
+				<display_value name="dStatStunEffect" value="4"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost AutoShotgun - Heart Breaker -->
+		<item name="TavernAutoShotgun">
+			<property name="Extends" value="gunShotgunT3AutoShotgun"/>
+			<property name="CustomIcon" value="gunShotgunT3AutoShotgun"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="25000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="UnlockedBy" value="craftingShotguns"/>
+			<property name="DescriptionKey" value="TavernAutoShotgunDesc"/>
+
+			<effect_group name="TavernAutoShotgun">
+				<passive_effect name="MaxRange" operation="base_set" value="40" tags="perkBoomstick"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="-.1,.1" tags="perkBoomstick"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="12" tags="perkBoomstick"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="base_add" value="-3" tags="perkBoomstick"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="150" tags="perkBoomstick"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.8" tags="perkBoomstick"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkBoomstick"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="20" tags="perkBoomstick"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkBoomstick"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="16" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.3" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.01,.01" tags="perkBoomstick"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".01,.01" tier="2,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.085,.085" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="4.2" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-2.5" tags="perkBoomstick"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2.5" tags="perkBoomstick"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="1.8" tags="perkBoomstick"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,2000" tier="1,6" tags="perkBoomstick"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
+				<display_value name="dStatStunEffect" value="4"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost IronFireaxe - Fire Axe -->
+		<item name="TavernIronFireaxe">
+			<property name="Extends" value="meleeToolAxeT1IronFireaxe"/>
+			<property name="CustomIcon" value="meleeToolAxeT1IronFireaxe"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="7000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernIronFireaxeDesc"/>
+
+			<effect_group name="TavernIronFireaxe">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkMiner69r,axe"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="17.9" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1200" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.8" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="23" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.55" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="83.0" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".72" tags="butcherHarvest"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="39.9" tags="secondary"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SteelAxe - Battle Axe -->
+		<item name="TavernSteelAxe">
+			<property name="Extends" value="meleeToolAxeT2SteelAxe"/>
+			<property name="CustomIcon" value="meleeToolAxeT2SteelAxe"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSteelAxeDesc"/>
+
+			<effect_group name="TavernSteelAxe">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkMiner69r,axe"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="28.9" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1400,2600" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.8" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="104" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.55" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="156" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
+				<passive_effect name="HarvestCount" operation="base_set" value=".72" tags="butcherHarvest"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="61.7" tags="secondary"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Chainsaw - Homemade Chainsaw -->
+		<item name="TavernChainsaw">
+			<property name="Extends" value="meleeToolAxeT3Chainsaw"/>
+			<property name="CustomIcon" value="meleeToolAxeT3Chainsaw"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernChainsawDesc"/>
+
+			<effect_group name="TavernChainsaw">
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="350" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="5500,12000" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="100" tags="perkMiner69r"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="75" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.85" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="oreWoodHarvest"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="600" tags="perkMiner69r"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.45" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".45" tags="perkMiner69r"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Auger - Drill -->
+		<item name="TavernAuger">
+			<property name="Extends" value="meleeToolPickT3Auger"/>
+			<property name="CustomIcon" value="meleeToolPickT3Auger"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernAugerDesc"/>
+
+			<effect_group name="TavernAuger">
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="350" tags="perkMiner69r"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="5500,12000" tier="1,6" tags="perkMiner69r"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="MaxRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.6" tags="perkMiner69r"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="100" tags="perkMiner69r"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="75" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1.25" tags="oreWoodHarvest"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkMiner69r"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="600" tags="perkMiner69r"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".5" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".25" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.45" tags="perkMiner69r"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".45" tags="perkMiner69r"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="6" tags="perkMiner69r"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost StunBaton - Lightning Rod -->
+		<item name="TavernStunBaton">
+			<property name="Extends" value="meleeWpnBatonT2StunBaton"/>
+			<property name="CustomIcon" value="meleeWpnBatonT2StunBaton"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernStunBatonDesc"/>
+
+			<effect_group name="TavernStunBaton">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="80" tags="perkElectrocutioner,perkFlurryOfIntellect"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="13.5" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="900,1200" tier="1,6" tags="perkElectrocutioner"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkElectrocutioner"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkElectrocutioner"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".11" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="31" tags="perkElectrocutioner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkElectrocutioner"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.8" tier="2,6" tags="perkElectrocutioner"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkElectrocutioner"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkElectrocutioner"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SteelClub - Heavy Club -->
+		<item name="TavernSteelClub">
+			<property name="Extends" value="meleeWpnClubT3SteelClub"/>
+			<property name="CustomIcon" value="meleeWpnClubT3SteelClub"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSteelClubDesc"/>
+
+			<effect_group name="TavernSteelClub">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="90" tags="perkPummelPete,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12.7" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1100,5000" tier="1,6" tags="perkPummelPete"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkPummelPete"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.2" tags="perkPummelPete"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="108" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.6" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="56" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SteelKnuckles - Golden Knuckles -->
+		<item name="TavernSteelKnuckles">
+			<property name="Extends" value="meleeWpnKnucklesT3SteelKnuckles"/>
+			<property name="CustomIcon" value="meleeWpnKnucklesT3SteelKnuckles"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSteelKnucklesDesc"/>
+
+			<effect_group name="TavernSteelKnuckles">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="140" tags="perkBrawler,perkFlurryOfFortitude"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="7.2" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,3200" tier="1,6" tags="perkBrawler"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkBrawler"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkBrawler"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="120" tags="perkBrawler"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkBrawler"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.55" tier="2,6" tags="perkBrawler"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="9" tags="perkBrawler"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkBrawler"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkBrawler"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.7" tags="organic"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="14.5" tags="secondary"/>
+			</effect_group>
+			<effect_group name="corpseRemoval">
+				<requirement name="!IsAlive" target="other"/>
+				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SteelSledgehammer - War Hammer -->
+		<item name="TavernSteelSledgehammer">
+			<property name="Extends" value="meleeWpnSledgeT3SteelSledgehammer"/>
+			<property name="CustomIcon" value="meleeWpnSledgeT3SteelSledgehammer"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSteelSledgehammerDesc"/>
+
+			<effect_group name="TavernSteelSledgehammer">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="35" tags="perkSkullCrusher,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="18" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="3000,7000" tier="1,6" tags="perkSkullCrusher"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.7" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".15" tags="perkSkullCrusher,primary"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="205" tags="perkSkullCrusher"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkSkullCrusher"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.6" tier="2,6" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="128" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkSkullCrusher"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.55" tier="2,6" tags="perkSkullCrusher"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="28" tags="secondary"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".4" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost SteelSpear - Stabbing Stick -->
+		<item name="TavernSteelSpear">
+			<property name="Extends" value="meleeWpnSpearT3SteelSpear"/>
+			<property name="CustomIcon" value="meleeWpnSpearT3SteelSpear"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernSteelSpearDesc"/>
+
+			<effect_group name="TavernSteelSpear">
+				<passive_effect name="TargetArmor" operation="perc_add" value="-.5" tags="perkJavelinMaster"/>
+				<display_value name="dTargetArmor" value="-.5"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="85" tags="perkJavelinMaster,perkFlurryOfPerception"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12.4" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="900,1600" tier="1,6" tags="perkJavelinMaster"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
+				<passive_effect name="MaxRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="100" tags="perkJavelinMaster"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkJavelinMaster"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.6" tier="2,6" tags="perkJavelinMaster"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="48" tags="perkJavelinMaster"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkJavelinMaster"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkJavelinMaster"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Crossbow - Triple Tap -->
+		<item name="TavernCrossbow">
+			<property name="Extends" value="gunBowT3CompoundCrossbow"/>
+			<property name="CustomIcon" value="gunBowT3CompoundCrossbow"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="20000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernCrossbowDesc"/>
+			<effect_group name="TavernCrossbow">
+				<passive_effect name="MaxRange" operation="base_set" value="60" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="60" tags="perkArchery"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkArchery"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkArchery"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="120" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.5" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".3" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkArchery"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1000" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Compound Bow - Peacemaker -->
+		<item name="TavernCompoundBow">
+			<property name="Extends" value="gunBowT3CompoundBow"/>
+			<property name="CustomIcon" value="gunBowT3CompoundBow"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernCompoundBowDesc"/>
+			<effect_group name="TavernCompoundBow">
+				<passive_effect name="MaxRange" operation="base_set" value="60" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="60" tags="perkArchery"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkArchery"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkArchery"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="100" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.5" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".3" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkArchery"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1000" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Pistol - Survivor's Sidearm -->
+		<item name="TavernPistol">
+			<property name="Extends" value="gunHandgunT1Pistol"/>
+			<property name="CustomIcon" value="gunHandgunT1Pistol"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="DescriptionKey" value="TavernPistolDesc"/>
+			<effect_group name="TavernPistol">
+				<passive_effect name="MaxRange" operation="base_set" value="50" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="180" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="15" tags="perkGunslinger"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="35" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1" tags="perkGunslinger"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="400,600" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Desert Vulture - Outpost's Revenge -->
+		<item name="TavernDesertVulture">
+			<property name="Extends" value="gunHandgunT3DesertVulture"/>
+			<property name="CustomIcon" value="gunHandgunT3DesertVulture"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="25000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernDesertVultureDesc"/>
+			<effect_group name="TavernDesertVulture">
+				<passive_effect name="MaxRange" operation="base_set" value="70" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="27" tags="perkGunslinger"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="150" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="6" tags="perkGunslinger"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="120" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkGunslinger"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.1" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2.5" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.3" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".15" tags="perkGunslinger"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,1000" tier="1,6" tags="perkGunslinger"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
+			</effect_group>
+		</item>
+
+		<!-- Outpost Impact Driver - Survivor's Wrench -->
+		<item name="TavernImpactDriver">
+			<property name="Extends" value="meleeToolSalvageT3ImpactDriver"/>
+			<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DescriptionKey" value="TavernImpactDriverDesc"/>
+			<effect_group name="TavernImpactDriver">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="80" tags="perkSalvageOperations"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkSalvageOperations"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.5" tags="perkSalvageOperations"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkSalvageOperations"/>
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkSalvageOperations"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkSalvageOperations"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSalvageOperations"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkSalvageOperations"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkSalvageOperations"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkSalvageOperations"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="concrete"/>
+				<passive_effect name="HarvestCount" operation="base_add" value=".2" tags="allHarvest"/>
+			</effect_group>
+		</item>
+
+		
+	</append>
+
+	<!-- Outpost Iron Shovel - Digger's Delight -->
+	<append xpath="/items">
+		<item name="TavernIronShovel">
+			<property name="Extends" value="meleeToolShovelT1IronShovel"/>
+			<property name="CustomIcon" value="meleeToolShovelT1IronShovel"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernIronShovelDesc"/>
+			<effect_group name="TavernIronShovel">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,2000" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+
+		<!-- Outpost Steel Shovel - Graveyard Guardian -->
+	<append xpath="/items">
+		<item name="TavernSteelShovel">
+			<property name="Extends" value="meleeToolShovelT2SteelShovel"/>
+			<property name="CustomIcon" value="meleeToolShovelT1IronShovel"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernSteelShovelDesc"/>
+			<effect_group name="TavernSteelShovel">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,2500" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+
+		<!-- Outpost Claw Hammer - Carpenter's Choice -->
+	<append xpath="/items">
+		<item name="TavernClawHammer">
+			<property name="Extends" value="meleeToolRepairT1ClawHammer"/>
+			<property name="CustomIcon" value="meleeToolRepairT1ClawHammer"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernClawHammerDesc"/>
+			<effect_group name="TavernClawHammer">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,2000" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+
+		<!-- Outpost Nailgun - Builder's Beast -->
+	<append xpath="/items">
+		<item name="TavernNailgun">
+			<property name="Extends" value="meleeToolRepairT3Nailgun"/>
+			<property name="CustomIcon" value="meleeToolRepairT3Nailgun"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernNailgunDesc"/>
+			<effect_group name="TavernNailgun">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,2500" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+
+		<!-- Outpost Wrench - Mechanic's Might -->
+	<append xpath="/items">
+		<item name="TavernWrench">
+			<property name="Extends" value="meleeToolSalvageT1Wrench"/>
+			<property name="CustomIcon" value="meleeToolSalvageT1Wrench"/>
+			<property name="CustomIconTint" value="#8B4513"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernWrenchDesc"/>
+			<effect_group name="TavernWrench">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="800,2000" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+
+		<!-- Outpost Ratchet - Tinker's Tool -->
+	<append xpath="/items">
+		<item name="TavernRatchet">
+			<property name="Extends" value="meleeToolSalvageT2Ratchet"/>
+			<property name="CustomIcon" value="meleeToolSalvageT2Ratchet"/>
+			<property name="CustomIconTint" value="#696969"/>
+			<property name="EconomicValue" value="10000"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="DescriptionKey" value="TavernRatchetDesc"/>
+			<effect_group name="TavernRatchet">
+				<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="900,2250" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3,.9" tier="2,6"/>
+			</effect_group>
+		</item>
+	</append>
+</configs>

@@ -1,0 +1,42 @@
+<config>
+	<append xpath="/blocks">
+		<block name="AdvancedLandClaimBlock"> 
+			<property name="CreativeMode" value="Player"/>
+			<property name="Extends" value="keystoneBlock"/>
+			<property name="Class" value="LandClaim"/>
+			<property name="CustomIcon" value="keystoneBlock"/>
+			<property name="CustomIconTint" value="008000"/>
+			<property name="Tags" value="landclaim"/>
+			<property name="IndexName" value="lpblock"/>
+			<property name="DisplayInfo" value="Custom"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="Mbedrock"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/Industrial/landClaimBlockPrefab.prefab"/>
+			<property name="PlacementDistance" value="25"/>
+			<property name="AllowedRotations" value="No45"/>
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="TakeDelay" value="30"/>
+			<property name="MaxDamage" value="7000"/>
+			<property name="StartDamage" value="0"/>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="MeshDamage" value="
+				DMG0, 7000,
+				DMG1, 1,
+				"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="10"/>
+			</property>
+			<drop event="Destroy" count="0"/>
+			<property name="SortOrder1" value="B050"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Building,advBuilding"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="SoundPickup" value="landclaim_grab"/>
+			<property name="SoundPlace" value="landclaim_place"/>
+		</block>
+	</append>
+</config>

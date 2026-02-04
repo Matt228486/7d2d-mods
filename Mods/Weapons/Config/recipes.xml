@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+	<!-- Outpost Magnum 44 - Survivor's Last Stand -->
+	<append xpath="/recipes">
+		<recipe name="TavernMagnum44" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+			<ingredient name="gunHandgunT1PistolParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<ingredient name="gunHandgunT2Magnum44" count="1"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunHandgunT1PistolParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Baseball Bat - Seat Basher -->
+	<append xpath="/recipes">
+		<recipe name="TavernBaseballBat" count="1" craft_area="workbench" tags="learnable,perkPummelPete">
+			<ingredient name="meleeWpnClubT3SteelClubParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeWpnClubT1BaseballBat" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnClubT3SteelClubParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Iron Knuckles recipe removed (duplicate of Outpost Golden Knuckles) -->
+
+	<!-- Outpost Pickaxe - Miner's Mug -->
+	<append xpath="/recipes">
+		<recipe name="TavernPickaxe" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="meleeToolAllSteelParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeToolPickT2SteelPickaxe" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAllSteelParts,resourceForgedSteel,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Machete - Butcher's Cleaver -->
+	<append xpath="/recipes">
+		<recipe name="TavernMachete" count="1" craft_area="workbench" craft_time="60" tags="learnable,perkDeepCuts">
+			<ingredient name="meleeWpnBladeT3MacheteParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeWpnBladeT3Machete" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnBladeT3MacheteParts,resourceForgedSteel,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Rocket Launcher - Final Stand -->
+	<append xpath="/recipes">
+		<recipe name="TavernRocketLauncher" count="1" craft_area="workbench" tags="learnable,perkDemolitionsExpert">
+			<ingredient name="gunExplosivesT3RocketLauncherParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="20"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="gunExplosivesT3RocketLauncher" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunExplosivesT3RocketLauncherParts,resourceForgedSteel,resourceDuctTape,resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Junk Drone - Outpost Companion -->
+	<append xpath="/recipes">
+		<recipe name="TavernJunkDrone" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+			<ingredient name="gunBotRoboticsParts" count="5"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="motionsensor" count="2"/>
+			<ingredient name="gunBotT3JunkDrone" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunBotRoboticsParts,resourceForgedSteel,motionsensor"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Junk Sledge - Guard Hammer -->
+	<append xpath="/recipes">
+		<recipe name="TavernJunkSledge" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+			<ingredient name="gunBotRoboticsParts" count="5"/>
+			<ingredient name="resourceForgedIron" count="40"/>
+			<ingredient name="resourceDuctTape" count="10"/>
+			<ingredient name="gunBotT1JunkSledge" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunBotRoboticsParts,resourceForgedIron,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Junk Turret - Outpost Warden -->
+	<append xpath="/recipes">
+		<recipe name="TavernJunkTurret" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+			<ingredient name="gunBotRoboticsParts" count="5"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="10"/>
+			<ingredient name="gunBotT2JunkTurret" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunBotRoboticsParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Crossbow - Triple Tap -->
+	<append xpath="/recipes">
+		<recipe name="TavernCrossbow" count="1" craft_area="workbench" tags="learnable,perkArchery">
+			<ingredient name="gunBowT1WoodenBowParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="gunBowT3CompoundCrossbow" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunBowT1WoodenBowParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Compound Bow - Peacemaker -->
+	<append xpath="/recipes">
+		<recipe name="TavernCompoundBow" count="1" craft_area="workbench" tags="learnable,perkArchery">
+			<ingredient name="gunBowT1WoodenBowParts" count="13"/>
+			<ingredient name="resourceLeather" count="25"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="gunBowT3CompoundBow" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunBowT1WoodenBowParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceLeather"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Impact Driver - Survivor's Wrench -->
+	<append xpath="/recipes">
+		<recipe name="TavernImpactDriver" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="16"/>
+			<ingredient name="resourceMechanicalParts" count="6"/>
+			<ingredient name="meleeToolSalvageT3ImpactDriver" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel,resourceMechanicalParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Pistol - Survivor's Sidearm -->
+	<append xpath="/recipes">
+		<recipe name="TavernPistol" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+			<ingredient name="gunHandgunT1PistolParts" count="5"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+			<ingredient name="gunHandgunT1Pistol" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunHandgunT1PistolParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Desert Vulture - Outpost's Revenge -->
+	<append xpath="/recipes">
+		<recipe name="TavernDesertVulture" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+			<ingredient name="gunHandgunT1PistolParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="gunHandgunT3DesertVulture" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunHandgunT1PistolParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost HandgunT2Magnum44 - Outpost Justice -->
+	<append xpath="/recipes">
+		<recipe name="TavernHandgunT2Magnum44" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+			<ingredient name="gunHandgunT1PistolParts" count="7"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<ingredient name="gunHandgunT2Magnum44" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunHandgunT1PistolParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SMG5 - Rapid Response -->
+	<append xpath="/recipes">
+		<recipe name="TavernSMG5" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+			<ingredient name="gunHandgunT1PistolParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<ingredient name="gunHandgunT3SMG5" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunHandgunT1PistolParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost AK47 - Workhorse -->
+	<append xpath="/recipes">
+		<recipe name="TavernAK47" count="1" craft_area="workbench" tags="learnable,perkMachineGunner">
+			<ingredient name="gunMGT1AK47Parts" count="5"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="gunMGT1AK47" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunMGT1AK47Parts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost TacticalAR - Assault Rifle -->
+	<append xpath="/recipes">
+		<recipe name="TavernTacticalAR" count="1" craft_area="workbench" tags="learnable,perkMachineGunner">
+			<ingredient name="gunMGT1AK47Parts" count="7"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<ingredient name="gunMGT2TacticalAR" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunMGT1AK47Parts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost M60 - Heavy Hitter -->
+	<append xpath="/recipes">
+		<recipe name="TavernM60" count="1" craft_area="workbench" tags="learnable,perkMachineGunner">
+			<ingredient name="gunMGT1AK47Parts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="gunMGT3M60" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunMGT1AK47Parts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Hunting Rifle - Long Shot -->
+	<append xpath="/recipes">
+		<recipe name="TavernHuntingRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+			<ingredient name="gunRifleT1HuntingRifleParts" count="1"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="gunRifleT1HuntingRifle" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunRifleT1HuntingRifleParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost LeverActionRifle - Quick Draw -->
+	<append xpath="/recipes">
+		<recipe name="TavernLeverActionRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+			<ingredient name="gunRifleT1HuntingRifleParts" count="7"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<ingredient name="gunRifleT2LeverActionRifle" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunRifleT1HuntingRifleParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SniperRifle - Precision Shot -->
+	<append xpath="/recipes">
+		<recipe name="TavernSniperRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+			<ingredient name="gunRifleT1HuntingRifleParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<ingredient name="gunRifleT3SniperRifle" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunRifleT1HuntingRifleParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost DoubleBarrel - Peacekeeper -->
+	<append xpath="/recipes">
+		<recipe name="TavernDoubleBarrel" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="1"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="gunShotgunT1DoubleBarrel" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost PumpShotgun - Super Pump -->
+	<append xpath="/recipes">
+		<recipe name="TavernPumpShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="7"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<ingredient name="gunShotgunT2PumpShotgun" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost AutoShotgun - Heart Breaker -->
+	<append xpath="/recipes">
+		<recipe name="TavernAutoShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="26"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<ingredient name="gunShotgunT3AutoShotgun" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost IronFireaxe - Fire Axe -->
+	<append xpath="/recipes">
+		<recipe name="TavernIronFireaxe" count="1" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceLeather" count="2"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="meleeToolAxeT1IronFireaxe" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value=".5,2.5" tags="resourceForgedIron,resourceLeather,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,3" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SteelAxe - Battle Axe -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelAxe" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="meleeToolAllSteelParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeToolAxeT2SteelAxe" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAllSteelParts,resourceForgedSteel,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Chainsaw - Homemade Chainsaw -->
+	<append xpath="/recipes">
+		<recipe name="TavernChainsaw" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="smallEngine" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="meleeToolAxeT3Chainsaw" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Auger - Drill -->
+	<append xpath="/recipes">
+		<recipe name="TavernAuger" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="smallEngine" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="meleeToolPickT3Auger" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost StunBaton - Lightning Rod -->
+	<append xpath="/recipes">
+		<recipe name="TavernStunBaton" count="1" craft_area="workbench" tags="learnable,perkElectrocutioner">
+			<ingredient name="meleeWpnBatonT2StunBatonParts" count="5"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="meleeWpnBatonT2StunBaton" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnBatonT2StunBatonParts,resourceForgedIron,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SteelClub - Heavy Club -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelClub" count="1" craft_area="workbench" tags="learnable,perkPummelPete">
+			<ingredient name="meleeWpnClubT3SteelClubParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeWpnClubT3SteelClub" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnClubT3SteelClubParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SteelKnuckles - Golden Knuckles -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelKnuckles" count="1" craft_area="workbench" tags="learnable,perkBrawler">
+			<ingredient name="meleeWpnKnucklesT3SteelKnucklesParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceGoldNugget" count="1"/>
+			<ingredient name="meleeWpnKnucklesT3SteelKnuckles" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnKnucklesT3SteelKnucklesParts,resourceForgedSteel,resourceWood,resourceGoldNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SteelSledgehammer - War Hammer -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelSledgehammer" count="1" craft_area="workbench" tags="learnable,perkSkullCrusher">
+			<ingredient name="meleeWpnSledgeT3SteelSledgehammerParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeWpnSledgeT3SteelSledgehammer" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnSledgeT3SteelSledgehammerParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost SteelSpear - Stabbing Stick -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelSpear" count="1" craft_area="workbench" tags="learnable,perkJavelinMaster,craftingSpears">
+			<ingredient name="meleeWpnSpearT3SteelSpearParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeWpnSpearT3SteelSpear" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeWpnSpearT3SteelSpearParts,resourceForgedSteel,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Iron Shovel - Digger's Delight -->
+	<append xpath="/recipes">
+		<recipe name="TavernIronShovel" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceWood" count="10"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="meleeToolShovelT1IronShovel" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceForgedIron,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Steel Shovel - Graveyard Guardian -->
+	<append xpath="/recipes">
+		<recipe name="TavernSteelShovel" count="1" craft_area="workbench" tags="learnable,perkMiner69r,craftingHarvestingTools">
+			<ingredient name="meleeToolAllSteelParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="10"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeToolShovelT2SteelShovel" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAllSteelParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Claw Hammer - Carpenter's Choice -->
+	<append xpath="/recipes">
+		<recipe name="TavernClawHammer" count="1" craft_area="workbench" tags="learnable,perkAdvancedEngineering">
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceWood" count="5"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="meleeToolRepairT1ClawHammer" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceForgedIron,resourceWood,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Nailgun - Builder's Beast -->
+	<append xpath="/recipes">
+		<recipe name="TavernNailgun" count="1" craft_area="workbench" tags="learnable,perkAdvancedEngineering">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="16"/>
+			<ingredient name="resourceMechanicalParts" count="6"/>
+			<ingredient name="meleeToolRepairT3Nailgun" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel,resourceMechanicalParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Wrench - Mechanic's Might -->
+	<append xpath="/recipes">
+		<recipe name="TavernWrench" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+			<ingredient name="meleeToolSalvageT1Wrench" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceForgedIron,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+
+	<!-- Outpost Ratchet - Tinker's Tool -->
+	<append xpath="/recipes">
+		<recipe name="TavernRatchet" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
+			<ingredient name="meleeToolAxeT3ChainsawParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="12"/>
+			<ingredient name="resourceDuctTape" count="3"/>
+			<ingredient name="meleeToolSalvageT2Ratchet" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+	</append>
+</configs>
+
