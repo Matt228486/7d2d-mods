@@ -1,10 +1,13 @@
-<append xpath="/buffs">
-    <buff id="reborn_bonus">
-        <name>Reborn Bonus</name>
-        <description>Receive scaling bonuses based on your reborn level.</description>
-        <effect_group>
-            <effect type="add_skill_points" value="[REBORN_LEVEL_BONUS]" />
-            <effect type="add_item" item="special_starter_pack" count="1" />
-        </effect_group>
-    </buff>
-</append>
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+    <append xpath="/buffs">
+        <buff id="reborn_bonus">
+            <name>Reborn Bonus</name>
+            <description>Receive scaling bonuses based on your reborn level.</description>
+            <effect_group>
+                <effect type="add_skill_points" value="[REBORN_LEVEL_BONUS]" />
+                <effect type="add_item" item="special_starter_pack" count="1" />
+            </effect_group>
+        </buff>
+    </append>
+</configs>
